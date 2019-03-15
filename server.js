@@ -5,7 +5,6 @@ var bodyParser = require('body-parser');
 var app = express();
 // const flash = require('express-flash');
 
-
 app.use(session({
   secret: 'keyboardkitteh',
   resave: false,
@@ -13,6 +12,7 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }))
 app.use(bodyParser.json());
+app.use(express.static( __dirname + '/public/dist/public' ));
 // app.use(flash());
 // app.use(express.static(__dirname + "/static"));
 // app.set('views', __dirname + '/views');
